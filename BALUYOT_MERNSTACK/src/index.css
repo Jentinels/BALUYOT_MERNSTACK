@@ -1,16 +1,35 @@
-.student-card {
-  border-top: 5px solid #1E5631; 
-  border-radius: 8px;
-  padding: 20px;
-  margin: 15px;
-  max-width: 300px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: system-ui, sans-serif;
+body {
+  background-color: #f4f7f6;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.student-card p {
+.student-card, .subjects {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 300px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #1E5631; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-card:hover, .subjects:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+.subjects h2 {
+  margin: 0 0 12px 0;
+  color: #1E5631;
+  font-size: 1.4rem;
+}
+
+.student-card p, .subjects p {
   margin: 8px 0;
-  color: #333;
-  font-size: 16px;
+  color: #4a5568;
+  font-size: 1rem;
 }

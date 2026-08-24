@@ -1,4 +1,5 @@
 import StudentCard from "./components/studentcard.jsx";
+import Subjects from "./components/subjects.jsx";
 
 function App() {
   return (
@@ -24,7 +25,20 @@ function App() {
       studentNumber="202402149" 
       course="Information Technology"/>
 
+      <Subjects 
+      SchedCode="SCHED101" 
+      SubName="Mathematics" 
+      ClassSched="Mon, Wed, Fri 8:00 AM - 11:00 AM"/>
 
+      <Subjects 
+      SchedCode="SCHED102" 
+      SubName="Science" 
+      ClassSched="Tue, Thu 1:00 PM - 3:00 PM"/>
+      
+      <Subjects 
+      SchedCode="SCHED103" 
+      SubName="History" 
+      ClassSched="Mon, Wed 2:00 PM - 4:00 PM"/> 
     </div>
   )
 }
