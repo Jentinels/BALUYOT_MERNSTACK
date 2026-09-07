@@ -1,0 +1,31 @@
+[
+    {
+    "id": 1,
+    "name": "John Doe",
+    "age": 20,
+    "birthday": "2003-01-15",
+    "studentNumber": "2023001",
+    "course": "BSIT",
+    "section": "3-7"
+},
+
+{
+    "id": 2,
+    "name": "Jane smith",
+    "age": 21,
+    "birthday": "2005-06-24",
+    "studentNumber": "2023002",
+    "course": "BSIT",
+    "section": "3-7"
+},
+
+{
+    "id": 3,
+    "name": "John Jerard",
+    "age": 21,
+    "birthday": "2005-07-25",
+    "studentNumber": "2023003",
+    "course": "BSIT",
+    "section": "3-7"
+}
+]
