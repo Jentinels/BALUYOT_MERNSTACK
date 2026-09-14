@@ -1,26 +1,26 @@
 [
     {
-    "id": 1,
-    "name": "John Doe",
+    "id": 201,
+    "name": "Rey yuki",
     "age": 20,
-    "birthday": "2003-01-15",
-    "studentNumber": "2023001",
+    "birthday": "2005-12-06",
+    "studentNumber": "2024001",
     "course": "BSIT",
     "section": "3-7"
 },
 
 {
-    "id": 2,
-    "name": "Jane smith",
+    "id": 202,
+    "name": "Geon kumpadre",
     "age": 21,
     "birthday": "2005-06-24",
-    "studentNumber": "2023002",
+    "studentNumber": "2024002",
     "course": "BSIT",
     "section": "3-7"
 },
 
 {
-    "id": 3,
+    "id": 203,
     "name": "John Jerard",
     "age": 21,
     "birthday": "2005-07-25",

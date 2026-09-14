@@ -1,35 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --paper: #f3e7ce;
+  --card: #fff9ef;
+  --ink: #3b2a1d;
+  --ink-muted: #6b5942;
+  --rust: #b24a2b;
+  --rust-dark: #8a3a21;
+  --ochre: #a66f1f;
+  --line: #dfcba5;
+  --shadow: rgba(59, 42, 29, 0.16);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  background-color: #f4f7f6;
-  font-family: system-ui, -apple-system, sans-serif;
-  padding: 2rem;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Layout */
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.page-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0 0 1.75rem;
+  color: var(--ink);
+}
+
+/* Navbar */
+
+.navbar {
+  background: var(--card);
+  border-bottom: 3px solid var(--rust);
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 0.75rem;
 }
 
-.student-card, .subjects {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  width: 300px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border-left: 6px solid #1E5631; 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
 }
 
-.student-card:hover, .subjects:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--rust-dark);
+  border-color: var(--ochre);
+}
+
+/* Home */
+
+.home-hero {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+
+
+/* Student grid + cards */
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.student-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px 4px 12px 12px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  box-shadow: 0 6px 14px -6px var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px -8px var(--shadow);
+}
+
+.student-card p,
+.details-card p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.field-label {
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-right: 0.4em;
+}
+
+
+.details-link {
+  display: inline-block;
+  margin-top: 0.9rem;
+  color: var(--rust);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.details-link:hover,
+.details-link:focus-visible {
+  border-color: var(--rust);
+}
+
+/* Student details page */
+
+.details-card {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--rust);
+  border-radius: 4px;
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 0 10px 24px -10px var(--shadow);
+}
+
+.not-found {
+  max-width: 420px;
+  margin: 3rem auto 1rem;
+  text-align: center;
+  color: var(--ink-muted);
+}
+
+/* Subjects (schedule) card */
+
+.subjects {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--ochre);
+  border-radius: 4px 12px 12px 4px;
+  padding: 1.5rem;
 }
 
 .subjects h2 {
-  margin: 0 0 12px 0;
-  color: #1E5631;
-  font-size: 1.4rem;
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--rust-dark);
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
 }
 
-.student-card p, .subjects p {
-  margin: 8px 0;
-  color: #4a5568;
-  font-size: 1rem;
+.subjects p {
+  margin: 0.3rem 0;
+  color: var(--ink);
+}
+
+@media (max-width: 480px) {
+  .navbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

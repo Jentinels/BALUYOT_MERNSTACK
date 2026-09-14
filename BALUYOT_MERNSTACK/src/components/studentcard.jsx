@@ -1,19 +1,20 @@
+import { Link } from "react-router-dom";
 
 function StudentCard({ id, name, age, birthday, studentNumber, course, section }) {
-return (
-  <div className="student-card">
-    <p>Name: {name}</p>
-    <p>Age: {age}</p>
-    <p>Birthday: {birthday}</p>
-    <p>Student Number: {studentNumber}</p>
-    <p>Course: {course}</p>
+  return (
+    <div className="student-card">
+      <p><span className="field-label">Name:</span>{name}</p>
+      <p><span className="field-label">Age:</span>{age}</p>
+      <p><span className="field-label">Birthday:</span>{birthday}</p>
+      <p><span className="field-label">Student Number:</span>{studentNumber}</p>
+      <p><span className="field-label">Course:</span>{course}</p>
+      <p><span className="field-label">Section:</span>{section}</p>
 
-    <Link to={`/students/${id}`} className="text-pink-600 hover:underline">
-    View student details
-    </Link>
-  </div>
-);
-
+      <Link to={`/Students/${id}`} className="details-link">
+        View student details
+      </Link>
+    </div>
+  );
 }
 
 export default StudentCard;
